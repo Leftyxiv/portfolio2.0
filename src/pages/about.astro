@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Antonio Ledoux" description="Software engineer, iOS developer, and fair chance hire building things that matter">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/about.png"
+					alt="Antonio and his wife at their wedding with fun oversized sunglasses"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I'm a software engineer, app developer, and lifelong problem solver based in Kentucky with one arm, 
+						a sense of humor, and zero tolerance for bullshit. As a <strong>fair chance hire</strong>, I know what it's like to 
+						overcome barriers and prove yourself through your work. Over the years, I've built backend systems at scale, 
+						developed mobile apps like <a href="/projects/nudgenote">NudgeNote</a>, and co-led community projects ranging from 
+						coding bootcamps to World of Warcraft guilds.
+					</p>
+					<p>
+						Whether it's writing Ruby code, optimizing workflows, or learning Swift to bring a vision to life, 
+						I thrive at the intersection of tech, creativity, and impact. I'm proud to work at <a href="/checkr">Checkr</a>, 
+						a company that champions fair chance hiring and helps create opportunities for millions.
+					</p>
+					<p>
+						Outside of work, I'm a metalhead, a mushroom grower, a plant-powered endurance junkie, and eight years clean. 
+						I believe in building things that matter, helping others level up, and owning every day I get.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Fair Chance Journey</h2>
+				<div class="content">
+					<p>
+						As a <strong>fair chance hire</strong>, I've experienced firsthand the transformative power of second chances. 
+						My path to tech wasn't traditional. It included overcoming addiction, navigating the justice system, and 
+						proving that past mistakes don't define future potential. Eight years clean and counting, I've turned my 
+						life around through determination, community support, and a lot of hard work.
+					</p>
+					<p>
+						This journey shapes how I approach everything: with empathy, resilience, and a commitment to helping others 
+						who are walking similar paths. Working at Checkr isn't just a job. It's a chance to contribute to a mission 
+						that creates opportunities for millions of people like me.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						Most of what I know, I learned by building, breaking, and rebuilding. I've worked my way from a rough start 
+						into a full-time engineering role, starting with a coding bootcamp that gave me the foundation to launch my career. 
+						Since then, I've continued learning through countless nights of documentation dives and caffeine. 
+						I continue to learn daily from app development to AI tooling, fitness science to fungi, and I bring that 
+						curiosity into everything I touch.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<ul>
+						<li><strong>Languages & Tools:</strong> Ruby, Rails, JavaScript, Swift, Git, Xcode, PostgreSQL</li>
+						<li><strong>App Dev:</strong> iOS (StoreKit, SwiftUI, TestFlight, App Store Connect), Vision Pro</li>
+						<li><strong>Backend:</strong> API design, feature development, bug squashing, system maintenance</li>
+						<li><strong>Automation & AI:</strong> Prompt engineering, Claude Code, Cursor IDE workflows</li>
+						<li><strong>Community Leadership:</strong> Discord moderation, guild management, mentoring</li>
+						<li><strong>Other:</strong> Vegan meal prep wizardry, DIY mushroom cultivation, metal scream appreciation</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+	
+	.content :global(ul) {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.content :global(li) {
+		padding: 0.75rem 0;
+		border-bottom: 1px solid var(--gray-800);
+	}
+	
+	.content :global(li:last-child) {
+		border-bottom: none;
+	}
+	
+	.content :global(strong) {
+		color: var(--gray-0);
+		font-weight: 600;
+		margin-right: 0.5rem;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

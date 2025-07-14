@@ -1,0 +1,305 @@
+---
+// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Component Imports
+import CallToAction from '../components/CallToAction.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Pill from '../components/Pill.astro';
+import BioluminescentMushroom from '../components/BioluminescentMushroom.jsx';
+import SporeParticles from '../components/SporeParticles.jsx';
+
+// Page section components
+import ContactCTA from '../components/ContactCTA.astro';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<BaseLayout title="Manny Ledoux - Engineer & Creator" description="Engineer at Checkr who loves mycology, metal, Warcraft, veganism, and most importantly, my wife.">
+	<SporeParticles client:load />
+	<div class="relative">
+		<div class="cosmic-hero min-h-screen flex items-center justify-center relative overflow-hidden">
+			<div class="absolute inset-0 bg-gradient-to-b from-cosmic-darkPurple via-cosmic-blue to-cosmic-pink opacity-20"></div>
+			
+			<div class="wrapper z-10">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+					<div class="hero-content">
+						<h1 class="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-cosmic-cyan via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent mb-4">
+							Hey, I'm Manny
+						</h1>
+						<p class="text-xl lg:text-2xl text-gray-300 mb-8">
+							Engineer at Checkr, fueled by curiosity and a love for building cool things.
+						</p>
+						<div class="flex flex-wrap gap-3 mb-8">
+							<span class="px-4 py-2 bg-cosmic-purple/20 border border-cosmic-purple rounded-full text-cosmic-cyan flex items-center gap-2">
+								<Icon icon="code" size="1.2em" /> Engineer
+							</span>
+							<span class="px-4 py-2 bg-cosmic-pink/20 border border-cosmic-pink rounded-full text-pink-300 flex items-center gap-2">
+								<Icon icon="heart" size="1.2em" /> Husband
+							</span>
+							<span class="px-4 py-2 bg-mushroom-biolume/20 border border-mushroom-biolume rounded-full text-green-300 flex items-center gap-2">
+								<span class="text-base">🌱</span> Vegan
+							</span>
+						</div>
+					</div>
+					
+					<div class="hero-visual flex justify-center">
+						<BioluminescentMushroom client:load />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>What I'm Into</h3>
+					<p>Life's too short not to geek out about the things you love.</p>
+				</header>
+
+				<div class="interests-grid">
+					<a href="/checkr" class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-cosmic-purple/10 to-cosmic-blue/10 border border-cosmic-purple/30 hover:border-cosmic-cyan/50 transition-all duration-300 hover:scale-105 min-h-[250px] block">
+						<div class="absolute inset-0 bg-gradient-to-br from-cosmic-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<Icon icon="code" size="2.5em" class="text-cosmic-cyan mb-4" />
+							<h4 class="text-xl font-bold text-white mb-3">Engineering at Checkr</h4>
+							<p class="text-gray-400 leading-relaxed">Building systems that help create fair chances for all.</p>
+							<p class="text-cosmic-cyan text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">My fair chance story →</p>
+						</div>
+					</a>
+					<div class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-mushroom-biolume/10 to-cosmic-pink/10 border border-mushroom-biolume/30 hover:border-mushroom-biolume/50 transition-all duration-300 hover:scale-105 min-h-[250px]">
+						<div class="absolute inset-0 bg-gradient-to-br from-mushroom-biolume/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<span class="text-5xl mb-4 block filter drop-shadow-[0_0_10px_rgba(0,255,148,0.5)]">🍄</span>
+							<h4 class="text-xl font-bold text-white mb-3">Mycology</h4>
+							<p class="text-gray-400 leading-relaxed">Fascinated by the fungal kingdom and its mysteries.</p>
+						</div>
+					</div>
+					<div class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:scale-105 min-h-[250px]">
+						<div class="absolute inset-0 bg-gradient-to-br from-red-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<span class="text-5xl mb-4 block">🎸</span>
+							<h4 class="text-xl font-bold text-white mb-3">Metal Music</h4>
+							<p class="text-gray-400 leading-relaxed">From progressive to death metal, it's my soundtrack.</p>
+						</div>
+					</div>
+					<a href="/wow" class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-blue-900/20 to-orange-900/20 border border-blue-700/30 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 min-h-[250px] block">
+						<div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<span class="text-5xl mb-4 block">⚔️</span>
+							<h4 class="text-xl font-bold text-white mb-3">World of Warcraft</h4>
+							<p class="text-gray-400 leading-relaxed">For the Horde! (or Alliance, depending on the day)</p>
+							<p class="text-orange-400 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">View my characters →</p>
+						</div>
+					</a>
+					<div class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-700/30 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 min-h-[250px]">
+						<div class="absolute inset-0 bg-gradient-to-br from-green-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<span class="text-5xl mb-4 block">🌱</span>
+							<h4 class="text-xl font-bold text-white mb-3">Veganism</h4>
+							<p class="text-gray-400 leading-relaxed">Compassionate living and discovering amazing plant-based food.</p>
+						</div>
+					</div>
+					<a href="/wife" class="interest-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-pink-900/20 to-rose-900/20 border border-pink-700/30 hover:border-rose-500/50 transition-all duration-300 hover:scale-105 block min-h-[250px]">
+						<div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+						<div class="relative z-10">
+							<span class="text-5xl mb-4 block animate-pulse">💕</span>
+							<h4 class="text-xl font-bold text-white mb-3">My Wife</h4>
+							<p class="text-gray-400 leading-relaxed">My favorite person and partner in all adventures.</p>
+							<p class="text-pink-400 text-sm mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Click to explore ❤️</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/projects/">
+						See My Projects
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Let's Connect</h3>
+					<p>
+						Whether you want to talk tech, share mushroom photos, or debate the best metal albums,
+						I'm always down for a good conversation.
+					</p>
+				</header>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.interest-card {
+		width: 100%;
+	}
+	
+	@media (min-width: 1024px) {
+		.interests-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(300px, 1fr));
+			gap: 2rem;
+			max-width: 1200px;
+			margin: 2rem auto;
+		}
+	}
+	
+	@media (min-width: 768px) and (max-width: 1023px) {
+		.interests-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+	}
+	
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.hero img {
+			aspect-ratio: 3 / 4;
+			border-radius: 4.5rem;
+			object-fit: cover;
+		}
+	}
+
+	/* ====================================================== */
+
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+	}
+
+	@media (min-width: 50em) {
+		.section {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			gap: 5rem;
+		}
+
+		.section.with-cta {
+			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+		}
+
+		.section-header {
+			grid-area: header;
+			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.with-cta .section-header {
+			justify-self: flex-start;
+			text-align: left;
+		}
+
+		.gallery {
+			grid-area: gallery;
+		}
+
+		.cta {
+			grid-area: cta;
+		}
+	}
+
+	/* ====================================================== */
+
+	.mention-card {
+		display: flex;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	@media (min-width: 50em) {
+		.mention-card {
+			border-radius: 1.5rem;
+			height: 9.5rem;
+		}
+	}
+</style>

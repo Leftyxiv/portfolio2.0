@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
+import GitHubStats from '../components/GitHubStats.astro';
+---
+
+<BaseLayout
+	title="Projects - Antonio Ledoux"
+	description="iOS apps, engineering projects, and creative experiments"
+>
+	<div class="stack gap-20">
+		<main class="wrapper">
+			<Hero
+				title="Projects"
+				tagline="From iOS apps to engineering experiments, here's what I've been building."
+			/>
+
+			<section class="projects-section">
+				<h2>iOS Development</h2>
+				<div class="projects-grid">
+					<article class="project-card ios featured">
+						<div class="project-icon">
+							<Icon icon="apple-logo" size="2.5em" />
+						</div>
+						<h3>NudgeNote</h3>
+						<p>A beautifully designed iOS app that transforms how you manage reminders. Built with privacy at its core, NudgeNote helps you stay organized without compromising your data.</p>
+						
+						<div class="project-features">
+							<h4>Key Features</h4>
+							<ul>
+								<li>Clean, intuitive interface with native iOS design</li>
+								<li>Location-based reminders with smart notifications</li>
+								<li>No account required - your data stays on your device</li>
+								<li>Dark mode support with custom themes</li>
+								<li>Widget support for quick access</li>
+							</ul>
+						</div>
+						
+						<div class="project-tags">
+							<span class="tag">SwiftUI</span>
+							<span class="tag">Core Data</span>
+							<span class="tag">CloudKit</span>
+							<span class="tag">WidgetKit</span>
+							<span class="tag">iOS 17+</span>
+						</div>
+						
+						<div class="project-links">
+							<CallToAction href="/projects/nudgenote">
+								View Details
+								<Icon icon="arrow-right" size="1.2em" />
+							</CallToAction>
+							<CallToAction href="https://apps.apple.com/app/nudgenote">
+								App Store
+								<Icon icon="apple-logo" size="1.2em" />
+							</CallToAction>
+						</div>
+					</article>
+
+					<article class="project-card ios">
+						<div class="project-icon">
+							<Icon icon="code" size="2.5em" />
+						</div>
+						<h3>iOS Development Skills</h3>
+						<p>Experienced in building native iOS applications with modern Apple technologies and frameworks.</p>
+						<div class="project-tags">
+							<span class="tag">Swift</span>
+							<span class="tag">SwiftUI</span>
+							<span class="tag">UIKit</span>
+							<span class="tag">Combine</span>
+							<span class="tag">TestFlight</span>
+							<span class="tag">Xcode Cloud</span>
+						</div>
+					</article>
+
+					<article class="project-card ios">
+						<div class="project-icon">
+							<span class="emoji">💎</span>
+						</div>
+						<h3>Ruby & Rails</h3>
+						<p>Building scalable web applications and APIs with Ruby on Rails, focusing on clean architecture and performance.</p>
+						<div class="project-tags">
+							<span class="tag">Ruby</span>
+							<span class="tag">Rails</span>
+							<span class="tag">RSpec</span>
+							<span class="tag">Sidekiq</span>
+							<span class="tag">PostgreSQL</span>
+							<span class="tag">Redis</span>
+						</div>
+					</article>
+
+					<article class="project-card ios">
+						<div class="project-icon">
+							<span class="emoji">⚡</span>
+						</div>
+						<h3>JavaScript & Node.js</h3>
+						<p>Full-stack JavaScript development with modern frameworks and tools for web applications and services.</p>
+						<div class="project-tags">
+							<span class="tag">Node.js</span>
+							<span class="tag">TypeScript</span>
+							<span class="tag">React</span>
+							<span class="tag">Next.js</span>
+							<span class="tag">Express</span>
+							<span class="tag">Astro</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="projects-section">
+				<h2>Engineering Projects</h2>
+				<div class="projects-grid">
+					<article class="project-card engineering">
+						<div class="project-icon">
+							<Icon icon="code" size="2.5em" />
+						</div>
+						<h3>Checkr Engineering</h3>
+						<p>Building fair-chance hiring solutions at scale. Working on systems that help create opportunities for millions.</p>
+						<div class="project-tags">
+							<span class="tag">Ruby</span>
+							<span class="tag">Rails</span>
+							<span class="tag">Distributed Systems</span>
+						</div>
+					</article>
+
+					<article class="project-card engineering">
+						<div class="project-icon">
+							<Icon icon="github-logo" size="2.5em" />
+						</div>
+						<h3>Open Source</h3>
+						<p>Contributing to various open source projects and maintaining a few of my own.</p>
+						<div class="project-links">
+							<CallToAction href="https://github.com/leftyxiv">
+								GitHub Profile
+								<Icon icon="arrow-right" size="1.2em" />
+							</CallToAction>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="projects-section">
+				<h2>Open Source & Community</h2>
+				<div class="projects-grid">
+					<article class="project-card creative">
+						<div class="project-icon">
+							<span class="emoji">📊</span>
+						</div>
+						<h3>WoWAnalyzer Contributor</h3>
+						<p>Contributing to the premier World of Warcraft combat log analysis tool. Helping raiders optimize their performance through data-driven insights and rotation analysis.</p>
+						<div class="project-tags">
+							<span class="tag">TypeScript</span>
+							<span class="tag">React</span>
+							<span class="tag">Game Analysis</span>
+							<span class="tag">Open Source</span>
+						</div>
+						<div class="project-links">
+							<CallToAction href="https://github.com/WoWAnalyzer/WoWAnalyzer">
+								View on GitHub
+								<Icon icon="github-logo" size="1.2em" />
+							</CallToAction>
+						</div>
+					</article>
+
+					<article class="project-card creative">
+						<div class="project-icon">
+							<span class="emoji">🏰</span>
+						</div>
+						<h3>Guild Website & Discord Bot</h3>
+						<p>Built and maintain a full-featured website and Discord bot for &lt;Enigma&gt; guild. Features raid signups, performance tracking, and automated raid management.</p>
+						<div class="project-tags">
+							<span class="tag">Next.js</span>
+							<span class="tag">Discord.js</span>
+							<span class="tag">PostgreSQL</span>
+							<span class="tag">Blizzard API</span>
+						</div>
+						<div class="project-links">
+							<CallToAction href="https://enigmaguild.com">
+								Visit Site
+								<Icon icon="arrow-right" size="1.2em" />
+							</CallToAction>
+						</div>
+					</article>
+
+					<article class="project-card creative">
+						<div class="project-icon">
+							<span class="emoji">🍄</span>
+						</div>
+						<h3>This Portfolio</h3>
+						<p>A mushroom-themed portfolio built with Astro, featuring live WoW character data, organic mycelium navigation, and privacy-focused design.</p>
+						<div class="project-tags">
+							<span class="tag">Astro</span>
+							<span class="tag">React</span>
+							<span class="tag">Three.js</span>
+							<span class="tag">Tailwind</span>
+						</div>
+						<div class="project-links">
+							<CallToAction href="https://github.com/leftyxiv/portfolio">
+								View Source
+								<Icon icon="github-logo" size="1.2em" />
+							</CallToAction>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="projects-section">
+				<GitHubStats username="leftyxiv" />
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.projects-section {
+		margin: 3rem 0;
+	}
+
+	.projects-section h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		margin-bottom: 2rem;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+		justify-items: center;
+	}
+
+	.project-card.featured {
+		grid-column: 1 / -1;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.project-card {
+		padding: 2.5rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		transition: all var(--theme-transition);
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		max-width: 500px;
+	}
+
+	.project-card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--card-gradient);
+		opacity: 0;
+		transition: opacity var(--theme-transition);
+	}
+
+	.project-card:hover::before {
+		opacity: 0.05;
+	}
+
+	.project-card.ios {
+		--card-gradient: linear-gradient(135deg, #007aff, #5ac8fa);
+	}
+
+	.project-card.engineering {
+		--card-gradient: linear-gradient(135deg, var(--accent-regular), var(--accent-light));
+	}
+
+	.project-card.creative {
+		--card-gradient: linear-gradient(135deg, var(--accent-regular), var(--accent-light));
+	}
+
+	.project-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.project-icon {
+		margin-bottom: 1rem;
+		color: var(--gray-200);
+	}
+	
+	.project-card.ios .project-icon {
+		color: #007aff;
+	}
+
+	.project-icon .emoji {
+		font-size: 2.5rem;
+		display: block;
+	}
+
+	.project-card h3 {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+	}
+
+	.project-card p {
+		color: var(--gray-200);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		padding: 0.375rem 0.875rem;
+		background: var(--gray-800);
+		color: var(--gray-200);
+		border-radius: 999rem;
+		font-size: var(--text-sm);
+		font-weight: 500;
+		border: 1px solid var(--gray-700);
+		transition: all var(--theme-transition);
+	}
+
+	.project-card:hover .tag {
+		background: var(--gray-700);
+		color: var(--gray-200);
+	}
+
+	.project-links {
+		margin-top: 1.5rem;
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	
+	.project-links :global(.link) {
+		background: var(--gradient-accent);
+		color: white;
+		font-weight: 600;
+	}
+	
+	.project-links :global(.link:hover) {
+		opacity: 0.9;
+	}
+
+	.project-features {
+		margin: 1.5rem 0;
+	}
+
+	.project-features h4 {
+		font-size: var(--text-lg);
+		color: var(--gray-100);
+		margin-bottom: 0.75rem;
+	}
+
+	.project-features ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.project-features li {
+		color: var(--gray-300);
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.project-features li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--theme-mushroom);
+		font-weight: bold;
+	}
+
+	@media (min-width: 50em) {
+		.projects-section {
+			margin: 4rem 0;
+		}
+
+		.projects-grid {
+			gap: 2.5rem;
+		}
+	}
+</style>

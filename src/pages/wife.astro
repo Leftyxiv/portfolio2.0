@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SporeParticles from '../components/SporeParticles.jsx';
+import LoveTimeline from '../components/LoveTimeline.jsx';
+import PhotoGallery from '../components/PhotoGallery.jsx';
+import ReasonsCards from '../components/ReasonsCards.jsx';
+import AnniversaryCounter from '../components/AnniversaryCounter.jsx';
+---
+
+<BaseLayout title="My Wife ❤️ - Manny Ledoux" description="Dedicated to my favorite person and partner in all adventures">
+	<SporeParticles client:load count={10} />
+	
+	<div class="min-h-screen relative">
+		{/* Aurora background */}
+		<div class="fixed inset-0 overflow-hidden">
+			<div class="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-radial from-pink-500/20 via-transparent to-transparent animate-pulse"></div>
+			<div class="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-radial from-rose-500/20 via-transparent to-transparent animate-pulse" style="animation-delay: 2s"></div>
+		</div>
+		
+		<div class="wrapper relative z-10">
+			<Hero
+				title="My Everything"
+				tagline="To the love of my life, my best friend, my partner in everything"
+				align="center"
+			/>
+			
+			<div class="mt-16 mb-24 space-y-32">
+				{/* Anniversary Counter */}
+				<section class="text-center">
+					<h2 class="text-3xl font-bold text-white mb-8">Time Together</h2>
+					<AnniversaryCounter client:visible anniversaryDate="2020-12-12" />
+				</section>
+				
+				{/* Love Timeline */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">Our Journey</h2>
+					<LoveTimeline client:visible />
+				</section>
+				
+				{/* Reasons I Love Her */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">Reasons I Love You</h2>
+					<ReasonsCards client:visible />
+				</section>
+				
+				{/* Photo Gallery */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">Memories</h2>
+					<PhotoGallery client:visible />
+				</section>
+				
+				{/* Love Note */}
+				<section class="max-w-2xl mx-auto text-center">
+					<div class="bg-gradient-to-br from-pink-900/20 to-rose-900/20 backdrop-blur-sm rounded-3xl p-8 border border-pink-500/30">
+						<p class="text-xl text-pink-100 leading-relaxed mb-4">
+							Every day with you is an adventure I never want to end. You make me laugh, 
+							you support my dreams, and you're always there when I need you. 
+							Thank you for being you.
+						</p>
+						<p class="text-2xl text-pink-300 font-bold">
+							I love you more than all the mushrooms in the forest 🍄❤️
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-20px); }
+	}
+	
+	.bg-gradient-radial {
+		background: radial-gradient(circle, var(--tw-gradient-from), var(--tw-gradient-to));
+	}
+</style>

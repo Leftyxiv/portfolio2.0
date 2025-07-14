@@ -1,0 +1,419 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Icon from '../../components/Icon.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import Pill from '../../components/Pill.astro';
+---
+
+<BaseLayout
+	title="NudgeNote - Antonio Ledoux"
+	description="A privacy-focused iOS reminder app built with SwiftUI"
+>
+	<div class="stack gap-20">
+		<main class="wrapper">
+			<Hero
+				title="NudgeNote"
+				tagline="Beautiful reminders that respect your privacy"
+				align="start"
+			>
+				<div class="hero-actions">
+					<CallToAction href="https://apps.apple.com/app/nudgenote">
+						Download on App Store
+						<Icon icon="apple-logo" size="1.2em" />
+					</CallToAction>
+					<CallToAction href="https://nudgenote.app" variant="secondary">
+						Visit Website
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</Hero>
+
+			<section class="project-overview">
+				<div class="content-grid">
+					<div class="overview-text">
+						<h2>Privacy-First Design</h2>
+						<p class="lead">
+							NudgeNote is built on a simple principle: your reminders are yours alone. 
+							No accounts, no cloud syncing to third parties, no data mining. Just a 
+							beautifully crafted app that helps you remember what matters.
+						</p>
+						<p>
+							In a world where every app wants your data, NudgeNote takes a different 
+							approach. It leverages iOS's native capabilities to keep your information 
+							secure while providing a premium experience.
+						</p>
+					</div>
+					<div class="overview-image">
+						<div class="phone-mockup">
+							<div class="placeholder-screen">
+								<Icon icon="apple-logo" size="3em" />
+								<p>App Screenshot</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="features-section">
+				<h2>Key Features</h2>
+				<div class="features-grid">
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="location" size="2em" />
+						</div>
+						<h3>Location-Based Reminders</h3>
+						<p>Get reminded when you arrive at or leave specific locations. Perfect for grocery lists, work tasks, or home reminders.</p>
+					</article>
+
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="shield" size="2em" />
+						</div>
+						<h3>True Privacy</h3>
+						<p>No account required. Your data stays on your device. iCloud sync is optional and uses Apple's encrypted infrastructure.</p>
+					</article>
+
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="brush" size="2em" />
+						</div>
+						<h3>Native iOS Design</h3>
+						<p>Built with SwiftUI to feel right at home on your iPhone. Supports dark mode, dynamic type, and all iOS accessibility features.</p>
+					</article>
+
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="widget" size="2em" />
+						</div>
+						<h3>Widget Support</h3>
+						<p>Beautiful widgets for your home screen. See your reminders at a glance without opening the app.</p>
+					</article>
+
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="bell" size="2em" />
+						</div>
+						<h3>Smart Notifications</h3>
+						<p>Intelligent notification grouping and scheduling. Get reminded at the right time without notification overload.</p>
+					</article>
+
+					<article class="feature-card">
+						<div class="feature-icon">
+							<Icon icon="palette" size="2em" />
+						</div>
+						<h3>Custom Themes</h3>
+						<p>Personalize your experience with custom color themes and app icons. Make NudgeNote truly yours.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="tech-section">
+				<h2>Technical Details</h2>
+				<div class="tech-content">
+					<div class="tech-stack">
+						<h3>Built With Modern iOS Technologies</h3>
+						<div class="tech-tags">
+							<Pill>SwiftUI</Pill>
+							<Pill>Core Data</Pill>
+							<Pill>CloudKit</Pill>
+							<Pill>WidgetKit</Pill>
+							<Pill>Core Location</Pill>
+							<Pill>UserNotifications</Pill>
+							<Pill>Swift 5.9</Pill>
+							<Pill>iOS 17+</Pill>
+						</div>
+					</div>
+					<div class="tech-highlights">
+						<h3>Development Highlights</h3>
+						<ul>
+							<li>100% SwiftUI interface with custom components</li>
+							<li>Reactive data flow using Combine framework</li>
+							<li>Efficient Core Data stack with background processing</li>
+							<li>Privacy-preserving location services implementation</li>
+							<li>Comprehensive unit and UI test coverage</li>
+							<li>Continuous deployment via Xcode Cloud</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="design-section">
+				<h2>Design Philosophy</h2>
+				<div class="design-grid">
+					<div class="design-principle">
+						<h3>Clarity</h3>
+						<p>Every interaction is purposeful. No unnecessary features or complex workflows.</p>
+					</div>
+					<div class="design-principle">
+						<h3>Deference</h3>
+						<p>The interface gets out of the way, letting your content take center stage.</p>
+					</div>
+					<div class="design-principle">
+						<h3>Depth</h3>
+						<p>Subtle animations and transitions create a sense of hierarchy and flow.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="cta-section">
+				<div class="cta-content">
+					<h2>Ready to Try NudgeNote?</h2>
+					<p>Join thousands of users who've chosen privacy without compromise.</p>
+					<div class="cta-actions">
+						<CallToAction href="https://apps.apple.com/app/nudgenote">
+							Download Now
+							<Icon icon="apple-logo" size="1.2em" />
+						</CallToAction>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero-actions {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-top: 1.5rem;
+	}
+
+	.project-overview {
+		margin: 4rem 0;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.overview-text h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+	}
+
+	.lead {
+		font-size: var(--text-lg);
+		color: var(--gray-200);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.overview-text p {
+		color: var(--gray-300);
+		line-height: 1.8;
+	}
+
+	.phone-mockup {
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto;
+		aspect-ratio: 9/19;
+		background: var(--gradient-subtle);
+		border-radius: 2rem;
+		padding: 0.5rem;
+		box-shadow: var(--shadow-xl);
+		border: 1px solid var(--gray-800);
+	}
+
+	.placeholder-screen {
+		width: 100%;
+		height: 100%;
+		background: var(--gray-900);
+		border-radius: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		color: var(--gray-600);
+	}
+
+	.features-section {
+		margin: 5rem 0;
+	}
+
+	.features-section h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 2rem;
+		transition: all var(--theme-transition);
+	}
+
+	.feature-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+		border-color: var(--accent-subtle);
+	}
+
+	.feature-icon {
+		width: 3.5rem;
+		height: 3.5rem;
+		background: var(--accent-subtle-overlay);
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		color: var(--accent-light);
+	}
+
+	.feature-card h3 {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+	}
+
+	.feature-card p {
+		color: var(--gray-300);
+		line-height: 1.6;
+	}
+
+	.tech-section {
+		margin: 5rem 0;
+		padding: 3rem;
+		background: var(--gradient-subtle);
+		border-radius: 1.5rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.tech-section h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.tech-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3rem;
+	}
+
+	.tech-stack h3,
+	.tech-highlights h3 {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin-bottom: 1.5rem;
+	}
+
+	.tech-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.tech-highlights ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.tech-highlights li {
+		color: var(--gray-300);
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.tech-highlights li::before {
+		content: '→';
+		position: absolute;
+		left: 0;
+		color: var(--accent-regular);
+		font-weight: bold;
+	}
+
+	.design-section {
+		margin: 5rem 0;
+	}
+
+	.design-section h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.design-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.design-principle {
+		text-align: center;
+		padding: 2rem;
+	}
+
+	.design-principle h3 {
+		font-size: var(--text-xl);
+		color: var(--accent-regular);
+		margin-bottom: 1rem;
+	}
+
+	.design-principle p {
+		color: var(--gray-300);
+		line-height: 1.6;
+	}
+
+	.cta-section {
+		margin: 5rem 0;
+		padding: 4rem 2rem;
+		background: linear-gradient(135deg, var(--accent-subtle-overlay), transparent);
+		border-radius: 1.5rem;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+	}
+
+	.cta-content h2 {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+	}
+
+	.cta-content p {
+		font-size: var(--text-lg);
+		color: var(--gray-200);
+		margin-bottom: 2rem;
+	}
+
+	.cta-actions {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (min-width: 50em) {
+		.content-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.tech-content {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>

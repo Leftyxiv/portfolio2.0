@@ -1,0 +1,101 @@
+---
+export interface Props {
+	username: string;
+}
+
+const { username } = Astro.props;
+---
+
+<div class="github-stats">
+	<h3>GitHub Activity</h3>
+	<div class="stats-grid">
+		<div class="stat-card">
+			<img 
+				src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&title_color=d946ef&text_color=e0e7ff&icon_color=06b6d4`}
+				alt="GitHub Stats"
+				loading="lazy"
+			/>
+		</div>
+		<div class="stat-card">
+			<img 
+				src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=radical&bg_color=00000000&hide_border=true&title_color=d946ef&text_color=e0e7ff`}
+				alt="Top Languages"
+				loading="lazy"
+			/>
+		</div>
+	</div>
+	<div class="contribution-graph">
+		<img 
+			src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=radical&background=00000000&hide_border=true&ring=d946ef&fire=f97316&currStreakLabel=06b6d4`}
+			alt="GitHub Streak"
+			loading="lazy"
+		/>
+	</div>
+</div>
+
+<style>
+	.github-stats {
+		margin: 3rem 0;
+		padding: 2rem;
+		background: var(--gradient-subtle);
+		border-radius: 1rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.github-stats h3 {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.stat-card {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 0.75rem;
+		transition: transform var(--theme-transition);
+	}
+
+	.stat-card:hover {
+		transform: translateY(-3px);
+	}
+
+	.stat-card img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.contribution-graph {
+		display: flex;
+		justify-content: center;
+		padding: 1rem;
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 0.75rem;
+		overflow-x: auto;
+	}
+
+	.contribution-graph img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	@media (max-width: 768px) {
+		.stats-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.github-stats {
+			padding: 1rem;
+		}
+	}
+</style>

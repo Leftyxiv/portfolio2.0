@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SporeParticles from '../components/SporeParticles.jsx';
+import WoWCharacter from '../components/WoWCharacter.jsx';
+import CharacterStats from '../components/CharacterStats.jsx';
+import RecentActivity from '../components/RecentActivity.jsx';
+import WoWCharacterProfile from '../components/WoWCharacterProfile.jsx';
+import WoWPageContent from '../components/WoWPageContent.jsx';
+import WoWPageContentBatch from '../components/WoWPageContentBatch.jsx';
+---
+
+<BaseLayout title="World of Warcraft - Manny Ledoux" description="My adventures in Azeroth">
+	<SporeParticles client:load count={15} />
+	
+	<div class="min-h-screen relative">
+		{/* Faction-based background */}
+		<div class="fixed inset-0 overflow-hidden wow-bg">
+			<div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-orange-900/20"></div>
+			<div class="absolute top-0 left-0 w-full h-full opacity-10">
+				<div class="horde-pattern"></div>
+			</div>
+		</div>
+		
+		<div class="wrapper relative z-10">
+			<Hero
+				title="For the Horde!"
+				tagline="My journey through Azeroth since Vanilla"
+				align="center"
+			/>
+			
+			<div class="mt-16 mb-24 space-y-24">
+				<WoWPageContentBatch client:load />
+			</div>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.wow-bg {
+		background-image: 
+			radial-gradient(ellipse at top left, rgba(255, 123, 0, 0.1) 0%, transparent 50%),
+			radial-gradient(ellipse at bottom right, rgba(0, 112, 221, 0.1) 0%, transparent 50%);
+	}
+	
+	.horde-pattern {
+		background-image: repeating-linear-gradient(
+			45deg,
+			transparent,
+			transparent 35px,
+			rgba(255, 0, 0, 0.03) 35px,
+			rgba(255, 0, 0, 0.03) 70px
+		);
+		width: 100%;
+		height: 100%;
+	}
+	
+	.character-select-btn {
+		@apply px-6 py-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg hover:border-orange-500 transition-all duration-300 flex items-center gap-2;
+	}
+	
+	.character-select-btn.active {
+		@apply border-orange-500 bg-orange-900/20;
+	}
+	
+	.character-showcase {
+		@apply max-w-4xl mx-auto bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700;
+		min-height: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.achievement-card {
+		@apply flex gap-4 items-center bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300;
+	}
+	
+	.achievement-icon {
+		@apply w-16 h-16 rounded-lg;
+	}
+	
+	.guild-info {
+		@apply max-w-2xl mx-auto bg-gradient-to-br from-orange-900/20 to-red-900/20 backdrop-blur-sm rounded-2xl p-8 border border-orange-700/30;
+	}
+</style>

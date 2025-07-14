@@ -1,0 +1,19 @@
+---
+import FloatingMycelium from './FloatingMycelium.jsx';
+
+const currentPath = Astro.url.pathname.replace(import.meta.env.BASE_URL, '') || '/';
+---
+
+<!-- Only show on desktop screens -->
+<div class="floating-mycelium-wrapper">
+  <FloatingMycelium client:load currentPath={currentPath} />
+</div>
+
+<style>
+  /* Hide on mobile/tablet */
+  @media (max-width: 1024px) {
+    .floating-mycelium-wrapper {
+      display: none;
+    }
+  }
+</style>

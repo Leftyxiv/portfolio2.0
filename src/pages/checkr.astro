@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SporeParticles from '../components/SporeParticles.jsx';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="Fair Chance at Checkr - Manny Ledoux" description="My journey as a fair chance hire and paying it forward">
+	<SporeParticles client:load count={10} />
+	
+	<div class="min-h-screen relative">
+		{/* Gradient background */}
+		<div class="fixed inset-0 overflow-hidden">
+			<div class="absolute inset-0 bg-gradient-to-br from-cosmic-purple/10 via-cosmic-blue/10 to-cosmic-cyan/10"></div>
+		</div>
+		
+		<div class="wrapper relative z-10">
+			<Hero
+				title="Engineering at Checkr"
+				tagline="A fair chance hire paying it forward"
+				align="center"
+			/>
+			
+			<div class="mt-16 mb-24 space-y-24">
+				{/* Mission Statement */}
+				<section class="max-w-4xl mx-auto text-center">
+					<div class="bg-gradient-to-br from-cosmic-purple/20 to-cosmic-blue/20 backdrop-blur-sm rounded-3xl p-10 border border-cosmic-purple/30">
+						<h2 class="text-3xl font-bold text-white mb-6">The Fair Chance Mission</h2>
+						<p class="text-xl text-gray-300 leading-relaxed mb-4">
+							Checkr's mission is to build a fairer future by improving understanding of the past. 
+							As someone who has benefited from fair chance hiring, this mission is deeply personal to me.
+						</p>
+						<p class="text-lg text-cosmic-cyan">
+							Everyone deserves the opportunity to build a better future, regardless of their past.
+						</p>
+					</div>
+				</section>
+
+				{/* My Journey */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">My Fair Chance Journey</h2>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+						<div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-cosmic-purple/50 transition-all duration-300">
+							<div class="text-3xl mb-4">🌱</div>
+							<h3 class="text-2xl font-bold text-white mb-4">Getting My Chance</h3>
+							<p class="text-gray-300 leading-relaxed">
+								When I applied to Checkr, I wasn't just looking for a job - I was looking for an opportunity 
+								to prove myself. Checkr saw my potential, not just my past, and gave me the chance to show 
+								what I could contribute.
+							</p>
+						</div>
+						<div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-cosmic-cyan/50 transition-all duration-300">
+							<div class="text-3xl mb-4">🚀</div>
+							<h3 class="text-2xl font-bold text-white mb-4">Growing as an Engineer</h3>
+							<p class="text-gray-300 leading-relaxed">
+								Since joining Checkr, I've grown tremendously as an engineer. Working on systems that help 
+								other people get their fair chance makes every line of code meaningful.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				{/* What I Work On */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">Building Systems That Matter</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+						<div class="feature-card">
+							<Icon icon="code" size="2.5em" class="text-cosmic-cyan mb-4" />
+							<h4 class="text-xl font-bold text-white mb-3">Background Check Systems</h4>
+							<p class="text-gray-400">Building reliable, fast systems that help companies make informed decisions.</p>
+						</div>
+						<div class="feature-card">
+							<Icon icon="heart" size="2.5em" class="text-cosmic-pink mb-4" />
+							<h4 class="text-xl font-bold text-white mb-3">Fair Chance Features</h4>
+							<p class="text-gray-400">Developing features that promote transparency and fairness in hiring.</p>
+						</div>
+						<div class="feature-card">
+							<Icon icon="users" size="2.5em" class="text-cosmic-purple mb-4" />
+							<h4 class="text-xl font-bold text-white mb-3">Team Collaboration</h4>
+							<p class="text-gray-400">Working with amazing people who share the mission of building a fairer future.</p>
+						</div>
+					</div>
+				</section>
+
+				{/* Paying It Forward */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-12 text-center">Paying It Forward</h2>
+					<div class="bg-gradient-to-br from-cosmic-cyan/10 to-cosmic-purple/10 backdrop-blur-sm rounded-3xl p-10 border border-cosmic-cyan/30 max-w-4xl mx-auto">
+						<div class="space-y-6">
+							<div class="flex gap-4">
+								<span class="text-2xl">💼</span>
+								<div>
+									<h4 class="text-xl font-bold text-white mb-2">Mentoring Fair Chance Candidates</h4>
+									<p class="text-gray-300">I actively mentor and support other fair chance hires, helping them navigate their journey in tech.</p>
+								</div>
+							</div>
+							<div class="flex gap-4">
+								<span class="text-2xl">🗣️</span>
+								<div>
+									<h4 class="text-xl font-bold text-white mb-2">Advocacy</h4>
+									<p class="text-gray-300">Speaking up about the importance of fair chance hiring and sharing my story to inspire change.</p>
+								</div>
+							</div>
+							<div class="flex gap-4">
+								<span class="text-2xl">🌟</span>
+								<div>
+									<h4 class="text-xl font-bold text-white mb-2">Excellence in Work</h4>
+									<p class="text-gray-300">Proving every day that fair chance hires are valuable team members who bring unique perspectives.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				{/* Call to Action */}
+				<section class="text-center">
+					<div class="bg-gray-900/50 backdrop-blur-sm rounded-3xl p-10 border border-gray-700 max-w-4xl mx-auto">
+						<h2 class="text-3xl font-bold text-white mb-6">Join the Mission</h2>
+						<p class="text-xl text-gray-300 mb-8">
+							Whether you're a fair chance candidate looking for opportunity or a company wanting to build 
+							more inclusive hiring practices, the future is brighter when we all get a fair chance.
+						</p>
+						<div class="flex flex-wrap gap-4 justify-center">
+							<a href="https://checkr.com/careers" target="_blank" rel="noopener noreferrer" 
+								class="px-8 py-3 bg-cosmic-purple rounded-full text-white font-semibold hover:bg-cosmic-purple/80 transition-colors">
+								Explore Checkr Careers
+							</a>
+							<a href="https://checkr.org/fair-chance" target="_blank" rel="noopener noreferrer"
+								class="px-8 py-3 border border-cosmic-cyan text-cosmic-cyan rounded-full font-semibold hover:bg-cosmic-cyan/10 transition-colors">
+								Learn About Fair Chance
+							</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.feature-card {
+		@apply bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-cosmic-purple/50 transition-all duration-300;
+	}
+	
+	.feature-card:hover {
+		transform: translateY(-4px);
+	}
+</style>

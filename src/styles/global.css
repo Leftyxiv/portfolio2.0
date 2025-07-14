@@ -1,0 +1,475 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global variables */
+:root {
+	/* Colors */
+	--gray-0: #090b11;
+	--gray-50: #141925;
+	--gray-100: #283044;
+	--gray-200: #3d4663;
+	--gray-300: #505d84;
+	--gray-400: #6474a2;
+	--gray-500: #8490b5;
+	--gray-600: #a3acc8;
+	--gray-700: #c3cadb;
+	--gray-800: #e3e6ee;
+	--gray-900: #f3f4f7;
+	--gray-999-basis: 0, 0%, 100%;
+	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
+	--gray-999: #ffffff;
+
+	/* Cosmic Colors */
+	--cosmic-purple: #6B46C1;
+	--cosmic-dark-purple: #1E1B4B;
+	--cosmic-blue: #2563EB;
+	--cosmic-pink: #EC4899;
+	--cosmic-cyan: #06B6D4;
+	--cosmic-glow: #00F5FF;
+
+	/* Mushroom Colors */
+	--mushroom-biolume: #00FF94;
+	--mushroom-cap: #FF6B6B;
+	--mushroom-stem: #FFF4E6;
+
+	--accent-light: var(--cosmic-pink);
+	--accent-regular: var(--cosmic-purple);
+	--accent-dark: var(--cosmic-dark-purple);
+	--accent-overlay: hsla(280, 89%, 67%, 0.33);
+	--accent-subtle-overlay: var(--accent-overlay);
+	--accent-text-over: var(--gray-999);
+
+	--link-color: var(--cosmic-cyan);
+
+	/* Theme-specific colors */
+	--theme-mushroom: #8B4513;
+	--theme-mushroom-light: #D2691E;
+	--theme-mushroom-dark: #654321;
+	--theme-metal: #1a1a1a;
+	--theme-metal-light: #333333;
+	--theme-metal-accent: #8B0000;
+	--theme-vegan: #228B22;
+	--theme-vegan-light: #32CD32;
+	--theme-vegan-dark: #006400;
+	--theme-warcraft: #1a237e;
+	--theme-warcraft-light: #3949ab;
+	--theme-warcraft-accent: #ff6f00;
+	--theme-love: #e91e63;
+	--theme-love-light: #f06292;
+	--theme-love-dark: #880e4f;
+
+	/* Interest card colors */
+	--card-engineering: var(--accent-regular);
+	--card-mycology: var(--theme-mushroom);
+	--card-metal: var(--theme-metal);
+	--card-warcraft: var(--theme-warcraft);
+	--card-vegan: var(--theme-vegan);
+	--card-wife: var(--theme-love);
+
+	/* Gradients */
+	--gradient-stop-1: var(--accent-light);
+	--gradient-stop-2: var(--accent-regular);
+	--gradient-stop-3: var(--accent-dark);
+	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
+	--gradient-accent: linear-gradient(
+		150deg,
+		var(--gradient-stop-1),
+		var(--gradient-stop-2),
+		var(--gradient-stop-3)
+	);
+	--gradient-accent-orange: linear-gradient(
+		150deg,
+		#ca7879,
+		var(--accent-regular),
+		var(--accent-dark)
+	);
+	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
+
+	/* Shadows */
+	--shadow-sm:
+		0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
+		0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
+	--shadow-md:
+		0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
+		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
+	--shadow-lg:
+		0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
+		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
+
+	/* Text Sizes */
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.125rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.625rem;
+	--text-2xl: 2.125rem;
+	--text-3xl: 2.625rem;
+	--text-4xl: 3.5rem;
+	--text-5xl: 4.5rem;
+
+	/* Fonts */
+	--font-system:
+		system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-body: 'Public Sans', var(--font-system);
+	--font-brand: Rubik, var(--font-system);
+
+	/* Transitions */
+	--theme-transition: 0.2s ease-in-out;
+}
+
+:root.theme-dark {
+	--gray-0: #ffffff;
+	--gray-50: #f3f4f7;
+	--gray-100: #e3e6ee;
+	--gray-200: #c3cadb;
+	--gray-300: #a3acc8;
+	--gray-400: #8490b5;
+	--gray-500: #6474a2;
+	--gray-600: #505d84;
+	--gray-700: #3d4663;
+	--gray-800: #283044;
+	--gray-900: #141925;
+	--gray-999-basis: 225, 31%, 5%;
+	--gray-999: #090b11;
+
+	--accent-light: #1c0056;
+	--accent-regular: #7611a6;
+	--accent-dark: #c561f6;
+	--accent-overlay: hsla(280, 89%, 67%, 0.33);
+	--accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
+	--accent-text-over: var(--gray-0);
+
+	--link-color: var(--accent-dark);
+
+	--gradient-stop-1: #4c11c6;
+	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+	--gradient-accent-orange: linear-gradient(
+		150deg,
+		#ca7879,
+		var(--accent-regular),
+		var(--accent-light)
+	);
+	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
+
+	--shadow-sm:
+		0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
+		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
+	--shadow-md:
+		0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
+		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
+	--shadow-lg:
+		0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
+		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+}
+
+html,
+body {
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #000000;
+	color: var(--gray-200);
+	font-family: var(--font-body);
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	background-image: 
+		radial-gradient(ellipse at top, rgba(107, 70, 193, 0.15) 0%, transparent 50%),
+		radial-gradient(ellipse at bottom, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.1;
+	font-family: var(--font-brand);
+	font-weight: 600;
+	color: var(--gray-100);
+}
+
+h1 {
+	font-size: var(--text-5xl);
+}
+
+h2 {
+	font-size: var(--text-4xl);
+}
+
+h3 {
+	font-size: var(--text-3xl);
+}
+
+h4 {
+	font-size: var(--text-2xl);
+}
+
+h5 {
+	font-size: var(--text-xl);
+}
+
+/* Utilities */
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 83rem;
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.gap-2 {
+	gap: 0.5rem;
+}
+.gap-4 {
+	gap: 1rem;
+}
+.gap-8 {
+	gap: 2rem;
+}
+.gap-10 {
+	gap: 2.5rem;
+}
+.gap-15 {
+	gap: 3.75rem;
+}
+.gap-20 {
+	gap: 5rem;
+}
+.gap-30 {
+	gap: 7.5rem;
+}
+.gap-48 {
+	gap: 12rem;
+}
+
+@media (min-width: 50em) {
+	.lg\:gap-2 {
+		gap: 0.5rem;
+	}
+	.lg\:gap-4 {
+		gap: 1rem;
+	}
+	.lg\:gap-8 {
+		gap: 2rem;
+	}
+	.lg\:gap-10 {
+		gap: 2.5rem;
+	}
+	.lg\:gap-15 {
+		gap: 3.75rem;
+	}
+	.lg\:gap-20 {
+		gap: 5rem;
+	}
+	.lg\:gap-30 {
+		gap: 7.5rem;
+	}
+	.lg\:gap-48 {
+		gap: 12rem;
+	}
+}
+
+/* Custom component styles */
+.interests-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.interest-card {
+	padding: 2rem;
+	background: var(--gradient-subtle);
+	border: 1px solid var(--gray-800);
+	border-radius: 1rem;
+	transition: all var(--theme-transition);
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.interest-card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: var(--card-color);
+	opacity: 0;
+	transition: opacity var(--theme-transition);
+}
+
+.interest-card:hover::before {
+	opacity: 0.1;
+}
+
+.interest-card.engineering {
+	--card-color: var(--card-engineering);
+}
+
+.interest-card.mycology {
+	--card-color: var(--card-mycology);
+}
+
+.interest-card.metal {
+	--card-color: var(--card-metal);
+}
+
+.interest-card.warcraft {
+	--card-color: var(--card-warcraft);
+}
+
+.interest-card.vegan {
+	--card-color: var(--card-vegan);
+}
+
+.interest-card.wife {
+	--card-color: var(--card-wife);
+}
+
+.interest-card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-lg);
+	border-color: var(--card-color);
+}
+
+.interest-card h4 {
+	margin: 1rem 0 0.5rem;
+	color: var(--gray-0);
+}
+
+.interest-card p {
+	color: var(--gray-300);
+	line-height: 1.6;
+}
+
+.interest-card .emoji {
+	font-size: 2.5rem;
+	display: block;
+}
+
+/* Mushroom animation for hero */
+.hero-visual {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.mushroom-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+
+.mushroom {
+	width: 100px;
+	height: 100px;
+	background: var(--theme-mushroom);
+	border-radius: 50% 50% 10% 10%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: mushroom-grow 3s ease-in-out infinite;
+}
+
+.mushroom::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	background: var(--theme-mushroom-light);
+	bottom: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+}
+
+.mushroom::after {
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 10px;
+	background: radial-gradient(ellipse, var(--theme-mushroom) 0%, transparent 70%);
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@keyframes mushroom-grow {
+	0%, 100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+}
+
+/* Theme variations */
+:root.theme-mushroom {
+	--accent-light: var(--theme-mushroom-light);
+	--accent-regular: var(--theme-mushroom);
+	--accent-dark: var(--theme-mushroom-dark);
+	--gradient-stop-1: var(--theme-mushroom-light);
+	--gradient-stop-2: var(--theme-mushroom);
+	--gradient-stop-3: var(--theme-mushroom-dark);
+}
+
+:root.theme-metal {
+	--accent-light: var(--theme-metal-light);
+	--accent-regular: var(--theme-metal-accent);
+	--accent-dark: var(--theme-metal);
+	--gradient-stop-1: var(--theme-metal-light);
+	--gradient-stop-2: var(--theme-metal-accent);
+	--gradient-stop-3: var(--theme-metal);
+	--gray-999: #0a0a0a;
+	--gray-0: #f5f5f5;
+}
+
+:root.theme-vegan {
+	--accent-light: var(--theme-vegan-light);
+	--accent-regular: var(--theme-vegan);
+	--accent-dark: var(--theme-vegan-dark);
+	--gradient-stop-1: var(--theme-vegan-light);
+	--gradient-stop-2: var(--theme-vegan);
+	--gradient-stop-3: var(--theme-vegan-dark);
+}
