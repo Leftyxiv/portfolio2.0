@@ -6,6 +6,7 @@ import type { iconPaths } from './IconPaths';
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
+	{ label: 'Checkr', href: '/checkr/' },
 	{ label: 'Projects', href: '/projects/' },
 	{ label: 'WoW', href: '/wow/' },
 	{ label: 'About', href: '/about/' },
@@ -92,9 +93,10 @@ const isCurrentPage = (href: string) => {
 				}
 			</div>
 
+			{/* Hidden until light mode is ready
 			<div class="theme-toggle">
 				<ThemeToggle />
-			</div>
+			</div> */}
 		</div>
 	</div>
 </nav>

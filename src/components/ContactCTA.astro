@@ -4,11 +4,17 @@ import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="https://www.linkedin.com/in/1armman">
-		Connect on LinkedIn
-		<Icon icon="linkedin-logo" size="1.2em" />
-	</CallToAction>
+	<h2>Interested in connecting?</h2>
+	<div class="cta-buttons">
+		<CallToAction href="https://www.linkedin.com/in/1armman">
+			Connect on LinkedIn
+			<Icon icon="linkedin-logo" size="1.2em" />
+		</CallToAction>
+		<CallToAction href="https://discord.gg/enigmawow" variant="secondary">
+			Join the Discord
+			<Icon icon="discord-logo" size="1.2em" />
+		</CallToAction>
+	</div>
 </aside>
 
 <style>
@@ -28,6 +34,13 @@ import Icon from './Icon.astro';
 		font-size: var(--text-xl);
 		text-align: center;
 		max-width: 15ch;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	@media (min-width: 50em) {

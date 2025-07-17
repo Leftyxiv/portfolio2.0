@@ -84,7 +84,7 @@ const WoWPageContentBatch = () => {
             Mal'Ganis - Horde
           </p>
           <p className="text-gray-400 mb-6">
-            Run by my wife and I - Building something special, one raid at a time
+            Run by my wife, myself, and a couple close friends - Building something special, one raid at a time
           </p>
           <div className="flex justify-center gap-8 mb-6 text-gray-400">
             <div>
