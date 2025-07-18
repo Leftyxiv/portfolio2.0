@@ -6,6 +6,7 @@ const AppleMusicPlayer = () => {
   const [recentTracks, setRecentTracks] = useState([]);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   useEffect(() => {
     const initializeMusicKit = async () => {
@@ -108,41 +109,56 @@ const AppleMusicPlayer = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="text-center py-8">
-        <div className="animate-pulse text-2xl">🎵</div>
-        <p className="text-gray-400">Loading Apple Music...</p>
-      </div>
-    );
-  }
-
-  if (!isAuthorized) {
-    return (
-      <div className="text-center py-8">
-        <button
-          onClick={authorize}
-          className="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold hover:from-pink-600 hover:to-rose-600 transition-all duration-300 flex items-center gap-2 mx-auto"
-        >
-          <span>🎵</span>
-          Connect Apple Music
-        </button>
-        <p className="text-gray-400 text-sm mt-4">
-          Sign in to see what I'm currently playing
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <div className="space-y-6">
-      {/* Currently Playing / Most Recent */}
-      {currentTrack && (
-        <div className="bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-red-900/50">
-          <h3 className="text-2xl font-bold text-red-400 mb-4 flex items-center gap-2">
-            <span className="text-2xl">🎵</span>
-            Recently Played
-          </h3>
+    <div className="bg-gray-900/70 backdrop-blur-sm rounded-xl border border-red-900/50 overflow-hidden">
+      {/* Collapsible Header */}
+      <button
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="w-full p-6 flex items-center justify-between hover:bg-gray-800/30 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">🎵</span>
+          <h3 className="text-2xl font-bold text-red-400">Apple Music</h3>
+          {isAuthorized && currentTrack && isCollapsed && (
+            <span className="text-sm text-gray-400">
+              - {currentTrack.attributes.name} by {currentTrack.attributes.artistName}
+            </span>
+          )}
+        </div>
+        <span className="text-2xl text-gray-400 transition-transform duration-300" style={{ transform: isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)' }}>
+          ⌄
+        </span>
+      </button>
+
+      {/* Collapsible Content */}
+      <div className={`transition-all duration-300 ${isCollapsed ? 'max-h-0' : 'max-h-[1000px]'} overflow-hidden`}>
+        <div className="p-6 pt-0">
+          {loading ? (
+            <div className="text-center py-8">
+              <div className="animate-pulse text-2xl">🎵</div>
+              <p className="text-gray-400">Loading Apple Music...</p>
+            </div>
+          ) : !isAuthorized ? (
+            <div className="text-center py-8">
+              <button
+                onClick={authorize}
+                className="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold hover:from-pink-600 hover:to-rose-600 transition-all duration-300 flex items-center gap-2 mx-auto"
+              >
+                <span>🎵</span>
+                Connect Apple Music
+              </button>
+              <p className="text-gray-400 text-sm mt-4">
+                Sign in to see what I'm currently playing
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {/* Currently Playing / Most Recent */}
+              {currentTrack && (
+                <div className="bg-gray-800/50 rounded-xl p-6">
+                  <h3 className="text-xl font-bold text-red-400 mb-4">
+                    Recently Played
+                  </h3>
           <div className="flex gap-4 items-center">
             {currentTrack.attributes.artwork && (
               <img
@@ -176,9 +192,9 @@ const AppleMusicPlayer = () => {
         </div>
       )}
 
-      {/* Recent Tracks */}
-      <div className="bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-red-900/50">
-        <h3 className="text-2xl font-bold text-red-400 mb-4">Recent Rotation</h3>
+              {/* Recent Tracks */}
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-red-400 mb-4">Recent Rotation</h3>
         <div className="space-y-3">
           {recentTracks.slice(1, 6).map((track) => (
             <div
@@ -200,6 +216,10 @@ const AppleMusicPlayer = () => {
               <span className="text-gray-500 text-xs">▶️</span>
             </div>
           ))}
+        </div>
+      </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -28,14 +28,14 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 				<section>
 					<h2 class="text-3xl font-bold text-white mb-8 text-center">Currently Vibing</h2>
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-						{/* Apple Music Integration */}
-						<div>
-							<AppleMusicPlayer client:load />
-						</div>
-						
 						{/* YouTube Music Integration */}
 						<div>
 							<YouTubeMusicPlayer client:load apiKey={import.meta.env.YOUTUBE_API_KEY} />
+						</div>
+						
+						{/* Apple Music Integration */}
+						<div>
+							<AppleMusicPlayer client:load />
 						</div>
 					</div>
 					
@@ -44,19 +44,19 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 						<h3 class="text-2xl font-bold text-red-400 mb-4">Recently Discovered</h3>
 						<ul class="space-y-3">
 							<li class="discovered-band">
-								<h4 class="font-bold text-white">Archspire</h4>
-								<p class="text-sm text-gray-400">Technical Death Metal • Canada</p>
-								<p class="text-xs text-gray-500">Insane speed and precision</p>
+								<h4 class="font-bold text-white">To The Grave</h4>
+								<p class="text-sm text-gray-400">Vegan Death Metal • Australia</p>
+								<p class="text-xs text-gray-500">Brutally heavy with a message</p>
 							</li>
 							<li class="discovered-band">
-								<h4 class="font-bold text-white">Igorrr</h4>
-								<p class="text-sm text-gray-400">Experimental/Breakcore Metal • France</p>
-								<p class="text-xs text-gray-500">Absolutely unhinged in the best way</p>
+								<h4 class="font-bold text-white">Bilmuri</h4>
+								<p class="text-sm text-gray-400">Experimental/Alternative Metal • USA</p>
+								<p class="text-xs text-gray-500">Genre-bending chaos and creativity</p>
 							</li>
 							<li class="discovered-band">
-								<h4 class="font-bold text-white">Zeal & Ardor</h4>
-								<p class="text-sm text-gray-400">Avant-garde Black Metal • Switzerland</p>
-								<p class="text-xs text-gray-500">Black metal meets spirituals</p>
+								<h4 class="font-bold text-white">Citizen Soldier</h4>
+								<p class="text-sm text-gray-400">Alternative Metal/Rock • USA</p>
+								<p class="text-xs text-gray-500">Powerful lyrics and emotional depth</p>
 							</li>
 						</ul>
 					</div>
@@ -145,30 +145,30 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 					<h2 class="text-3xl font-bold text-white mb-8 text-center">Concert Chronicles</h2>
 					<div class="concert-grid">
 						<div class="concert-card">
-							<h3 class="text-xl font-bold text-red-400">Gojira @ The Fillmore</h3>
-							<p class="text-gray-400 text-sm mb-2">March 2023 • San Francisco, CA</p>
-							<p class="text-gray-300">Absolutely crushing performance. The whale projections during "Flying Whales" gave me chills.</p>
+							<h3 class="text-xl font-bold text-red-400">Rock the Country</h3>
+							<p class="text-gray-400 text-sm mb-2">Ashland, Kentucky</p>
+							<p class="text-gray-300">Featuring Afroman and Nickelback - what a wild mix! An unforgettable festival experience.</p>
 						</div>
 						
 						<div class="concert-card">
-							<h3 class="text-xl font-bold text-red-400">Tool @ Chase Center</h3>
-							<p class="text-gray-400 text-sm mb-2">January 2022 • San Francisco, CA</p>
-							<p class="text-gray-300">Mind-bending visuals and flawless execution. Danny Carey is not human.</p>
+							<h3 class="text-xl font-bold text-red-400">Pop Evil w/ Meet & Greet</h3>
+							<p class="text-gray-400 text-sm mb-2">Louisville, Kentucky</p>
+							<p class="text-gray-300">Amazing show plus got to meet the band! They were super cool and down to earth.</p>
 						</div>
 						
 						<div class="concert-card">
-							<h3 class="text-xl font-bold text-red-400">Meshuggah @ The Warfield</h3>
-							<p class="text-gray-400 text-sm mb-2">September 2022 • San Francisco, CA</p>
-							<p class="text-gray-300">The most precise wall of sound I've ever experienced. Polyrhythmic perfection.</p>
+							<h3 class="text-xl font-bold text-red-400">Lindsey Stirling Winter Tour</h3>
+							<p class="text-gray-400 text-sm mb-2">Lexington, Kentucky</p>
+							<p class="text-gray-300">Incredible performance - the violin meets electronic meets metal vibes were unreal.</p>
 						</div>
 						
 						<div class="concert-card wishlist">
 							<h3 class="text-xl font-bold text-orange-400">Wishlist Shows</h3>
 							<ul class="text-gray-400 space-y-1 mt-2">
-								<li>• Opeth (acoustic set)</li>
-								<li>• Ne Obliviscaris</li>
-								<li>• Archspire</li>
-								<li>• Rivers of Nihil</li>
+								<li>• Opeth (for my wife - she loves them!)</li>
+								<li>• Shadow of Intent</li>
+								<li>• Slaughter to Prevail</li>
+								<li>• Sleep Token (again!)</li>
 							</ul>
 						</div>
 					</div>
@@ -179,32 +179,34 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 					<h2 class="text-3xl font-bold text-white mb-8 text-center">Band Spotlight</h2>
 					<div class="spotlight-container">
 						<div class="spotlight-header">
-							<h3 class="text-4xl font-bold text-red-400">MESHUGGAH</h3>
-							<p class="text-xl text-gray-400">Swedish Extreme Metal</p>
+							<h3 class="text-4xl font-bold text-red-400">SLAUGHTER TO PREVAIL</h3>
+							<p class="text-xl text-gray-400">Russian Deathcore Titans</p>
 						</div>
 						<div class="spotlight-content">
 							<p class="text-gray-300 mb-4">
-								The masters of polyrhythmic metal. Meshuggah has been bending minds and breaking necks since 1987. 
-								Their influence on modern metal cannot be overstated - they essentially created djent and continue 
-								to push the boundaries of what's possible in extreme music.
+								Absolute brutality personified. Led by the masked vocalist Alex Terrible, Slaughter to Prevail 
+								brings a unique blend of Russian aggression and modern deathcore that's taking the metal world by storm. 
+								Their live shows are legendary - pure chaos and energy that leaves crowds in awe.
 							</p>
 							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 								<div>
-									<h4 class="font-bold text-red-400 mb-2">Essential Albums:</h4>
+									<h4 class="font-bold text-red-400 mb-2">Essential Tracks:</h4>
 									<ul class="text-gray-400 space-y-1">
-										<li>• Destroy Erase Improve (1995)</li>
-										<li>• Nothing (2002)</li>
-										<li>• obZen (2008)</li>
-										<li>• The Violent Sleep of Reason (2016)</li>
+										<li>• Viking</li>
+										<li>• Behehlit</li>
+										<li>• American Grizzly in America</li>
+										<li>• Demolisher</li>
+										<li>• Baba Yaga</li>
 									</ul>
 								</div>
 								<div>
-									<h4 class="font-bold text-red-400 mb-2">Why They Matter:</h4>
+									<h4 class="font-bold text-red-400 mb-2">Why They're Incredible:</h4>
 									<ul class="text-gray-400 space-y-1">
-										<li>• Pioneered 8-string guitars in metal</li>
-										<li>• Masters of polyrhythmic composition</li>
-										<li>• Influenced an entire generation</li>
-										<li>• Still innovating after 35+ years</li>
+										<li>• Alex Terrible's inhuman vocals</li>
+										<li>• Crushing breakdowns that defy physics</li>
+										<li>• Theatrical live performances</li>
+										<li>• Russian lyrics add unique flavor</li>
+										<li>• Masks and stage presence on point</li>
 									</ul>
 								</div>
 							</div>
@@ -220,16 +222,22 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 							<h3 class="text-2xl font-bold text-red-400 mb-4">Favorite Album Art</h3>
 							<div class="album-art-grid">
 								<div class="album-art-item">
-									<div class="art-placeholder">🎨</div>
-									<p class="text-sm">Blood Mountain - Mastodon</p>
+									<div class="art-placeholder">
+										<img src="/assets/metal/brandofsacrifice-interstice.jpeg" alt="Interstice by Brand of Sacrifice" class="w-full h-full object-cover rounded-lg" />
+									</div>
+									<p class="text-sm">Interstice - Brand of Sacrifice</p>
 								</div>
 								<div class="album-art-item">
-									<div class="art-placeholder">🎨</div>
-									<p class="text-sm">Lateralus - Tool</p>
+									<div class="art-placeholder">
+										<img src="/assets/metal/signsoftheswarm-absolver.jpeg" alt="Absolver by Signs of the Swarm" class="w-full h-full object-cover rounded-lg" />
+									</div>
+									<p class="text-sm">Absolver - Signs of the Swarm</p>
 								</div>
 								<div class="album-art-item">
-									<div class="art-placeholder">🎨</div>
-									<p class="text-sm">Blackwater Park - Opeth</p>
+									<div class="art-placeholder">
+										<img src="/assets/metal/thebrowning-omni.jpeg" alt="Omni by The Browning" class="w-full h-full object-cover rounded-lg" />
+									</div>
+									<p class="text-sm">Omni - The Browning</p>
 								</div>
 							</div>
 						</div>
@@ -237,10 +245,10 @@ import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
 						<div class="vault-section">
 							<h3 class="text-2xl font-bold text-red-400 mb-4">Underground Gems</h3>
 							<ul class="space-y-2 text-gray-300">
-								<li>• <span class="font-bold">Slugdge</span> - Mollusk-themed tech death</li>
-								<li>• <span class="font-bold">Alkaloid</span> - Progressive extreme metal</li>
-								<li>• <span class="font-bold">Artificial Brain</span> - Sci-fi death metal</li>
-								<li>• <span class="font-bold">Spectral Voice</span> - Cavernous death/doom</li>
+								<li>• <span class="font-bold">The Browning</span> - Electronic deathcore pioneers</li>
+								<li>• <span class="font-bold">Upon a Burning Body</span> - Texas metalcore brutality</li>
+								<li>• <span class="font-bold">Versus Me</span> - Post-hardcore energy</li>
+								<li>• <span class="font-bold">We Butter the Bread with Butter</span> - German electronicore chaos</li>
 							</ul>
 						</div>
 					</div>

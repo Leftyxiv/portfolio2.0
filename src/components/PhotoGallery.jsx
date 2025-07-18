@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 const PhotoGallery = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   
-  // Placeholder photos - these will be replaced with actual photos
+  // Our precious memories together
   const photos = [
-    { id: 1, src: 'https://via.placeholder.com/400x300/1E1B4B/EC4899?text=Photo+1', caption: 'Our first adventure together' },
-    { id: 2, src: 'https://via.placeholder.com/300x400/2563EB/00F5FF?text=Photo+2', caption: 'That perfect sunset' },
-    { id: 3, src: 'https://via.placeholder.com/400x400/EC4899/FFFFFF?text=Photo+3', caption: 'Wedding day bliss' },
-    { id: 4, src: 'https://via.placeholder.com/400x300/6B46C1/00FF94?text=Photo+4', caption: 'Exploring new places' },
-    { id: 5, src: 'https://via.placeholder.com/300x400/FF6B6B/FFF4E6?text=Photo+5', caption: 'Everyday moments' },
-    { id: 6, src: 'https://via.placeholder.com/400x400/00F5FF/1E1B4B?text=Photo+6', caption: 'Making memories' },
+    { id: 1, src: '/assets/wife/cenotes-mexico.jpg', caption: 'Swimming in the magical cenotes of Mexico' },
+    { id: 2, src: '/assets/wife/bacalar-lagoon.jpg', caption: 'Together at Bacalar, the Lagoon of Seven Colors' },
+    { id: 3, src: '/assets/wife/giants-game.jpg', caption: 'Cheering on the Giants when they played the Reds' },
+    { id: 4, src: '/assets/wife/haight-ashbury.jpg', caption: 'Exploring Haight-Ashbury in San Francisco' },
+    { id: 5, src: '/assets/wife/disney-honeymoon.jpg', caption: 'Our magical honeymoon at Disney World, Orlando' },
+    { id: 6, src: '/assets/wife/wedding-day.jpg', caption: 'The happiest day - our wedding day kiss' },
   ];
 
   return (

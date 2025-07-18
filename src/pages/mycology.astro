@@ -31,35 +31,37 @@ import CallToAction from '../components/CallToAction.astro';
 				<section>
 					<h2 class="text-3xl font-bold text-white mb-8 text-center">Mushroom Gallery</h2>
 					<div class="mushroom-gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{/* Sample mushroom cards - in production, these would be generated from data */}
+						{/* Unknown species from front yard */}
 						<div class="mushroom-card group">
 							<div class="image-container">
-								<span class="text-8xl">🍄</span>
+								<img src="/assets/mycology/unknown-frontyard.jpg" alt="Unknown mushroom species" class="w-full h-full object-cover rounded-lg" />
 							</div>
-							<h3 class="text-xl font-bold text-mushroom-biolume">Amanita muscaria</h3>
-							<p class="text-sm text-gray-400 italic mb-2">Fly Agaric</p>
-							<p class="text-gray-300 text-sm">The iconic red and white mushroom. Psychoactive but toxic - handle with extreme care!</p>
-							<p class="text-xs text-gray-500 mt-2">Found: Pacific Northwest • October 2023</p>
+							<h3 class="text-xl font-bold text-mushroom-biolume">Unknown Species</h3>
+							<p class="text-sm text-gray-400 italic mb-2">Mystery Mushroom</p>
+							<p class="text-gray-300 text-sm">Fascinating specimen found growing in my front yard. Still working on identification!</p>
+							<p class="text-xs text-gray-500 mt-2">Found: My Front Yard • 2024</p>
 						</div>
 						
+						{/* Pearl oysters I grew */}
 						<div class="mushroom-card group">
 							<div class="image-container">
-								<span class="text-8xl">🍄</span>
+								<img src="/assets/mycology/pearl-oysters.jpg" alt="Pearl oyster mushrooms" class="w-full h-full object-cover rounded-lg" />
 							</div>
 							<h3 class="text-xl font-bold text-mushroom-biolume">Pleurotus ostreatus</h3>
-							<p class="text-sm text-gray-400 italic mb-2">Oyster Mushroom</p>
-							<p class="text-gray-300 text-sm">Delicious edible with a delicate flavor. Easy to cultivate at home!</p>
-							<p class="text-xs text-gray-500 mt-2">Cultivated: Home Lab • Ongoing</p>
+							<p class="text-sm text-gray-400 italic mb-2">Pearl Oyster Mushrooms</p>
+							<p class="text-gray-300 text-sm">Beautiful pearl oysters I cultivated at home. Grown on Azure standard grains!</p>
+							<p class="text-xs text-gray-500 mt-2">Cultivated: Home Lab • My Own Grow</p>
 						</div>
 						
+						{/* Bioluminescent mushroom */}
 						<div class="mushroom-card group bioluminescent">
 							<div class="image-container">
-								<span class="text-8xl filter brightness-150">🍄</span>
+								<img src="/assets/mycology/bioluminescent.jpg" alt="Bioluminescent mushrooms" class="w-full h-full object-cover rounded-lg glow-image" />
 							</div>
 							<h3 class="text-xl font-bold text-mushroom-biolume">Panellus stipticus</h3>
 							<p class="text-sm text-gray-400 italic mb-2">Bitter Oyster</p>
-							<p class="text-gray-300 text-sm">One of the few bioluminescent mushrooms in North America!</p>
-							<p class="text-xs text-gray-500 mt-2">Found: Local Forest • September 2023</p>
+							<p class="text-gray-300 text-sm">One of the few bioluminescent mushrooms in North America! Emits a greenish glow in the dark.</p>
+							<p class="text-xs text-gray-500 mt-2">Source: Nature's Light Show</p>
 						</div>
 					</div>
 				</section>
@@ -72,24 +74,24 @@ import CallToAction from '../components/CallToAction.astro';
 							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4">Current Projects</h3>
 							<ul class="space-y-3">
 								<li class="flex items-start gap-3">
-									<span class="text-2xl">🦪</span>
-									<div>
-										<h4 class="font-bold text-white">Blue Oyster Mushrooms</h4>
-										<p class="text-gray-400 text-sm">Growing in straw substrate - Week 3 of fruiting</p>
-									</div>
-								</li>
-								<li class="flex items-start gap-3">
 									<span class="text-2xl">🦁</span>
 									<div>
 										<h4 class="font-bold text-white">Lion's Mane</h4>
-										<p class="text-gray-400 text-sm">Supplemented sawdust blocks - Pinning stage</p>
+										<p class="text-gray-400 text-sm">Azure standard grains + Kirkland sawdust pellets</p>
 									</div>
 								</li>
 								<li class="flex items-start gap-3">
-									<span class="text-2xl">🌰</span>
+									<span class="text-2xl">🦪</span>
 									<div>
-										<h4 class="font-bold text-white">Shiitake</h4>
-										<p class="text-gray-400 text-sm">Oak logs inoculated - Colonization phase</p>
+										<h4 class="font-bold text-white">Blue Oyster</h4>
+										<p class="text-gray-400 text-sm">Azure standard grains + Kirkland sawdust pellets</p>
+									</div>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-2xl">👑</span>
+									<div>
+										<h4 class="font-bold text-white">King Oyster</h4>
+										<p class="text-gray-400 text-sm">Azure standard grains + Kirkland sawdust pellets</p>
 									</div>
 								</li>
 							</ul>
@@ -131,17 +133,17 @@ import CallToAction from '../components/CallToAction.astro';
 								Discord Communities
 							</h3>
 							<div class="space-y-3">
-								<a href="#" class="discord-link block">
-									<h4 class="font-bold">Mushroom Growers United</h4>
-									<p class="text-sm text-gray-400">5k+ members • Active cultivation community</p>
+								<a href="https://discord.gg/6bNYSAqU" target="_blank" rel="noopener noreferrer" class="discord-link block">
+									<h4 class="font-bold">The Fungus Amongus</h4>
+									<p class="text-sm text-gray-400">Active mycology community • ID help & cultivation</p>
 								</a>
-								<a href="#" class="discord-link block">
-									<h4 class="font-bold">Mycology Enthusiasts</h4>
-									<p class="text-sm text-gray-400">General mycology discussion & ID help</p>
+								<a href="https://discord.gg/8HujfgVU" target="_blank" rel="noopener noreferrer" class="discord-link block">
+									<h4 class="font-bold">Mushroom Clubhouse</h4>
+									<p class="text-sm text-gray-400">Friendly community for mushroom enthusiasts</p>
 								</a>
-								<a href="#" class="discord-link block">
-									<h4 class="font-bold">Gourmet Mushroom Cultivation</h4>
-									<p class="text-sm text-gray-400">Focus on edible species & recipes</p>
+								<a href="https://discord.gg/Kva6SCEE" target="_blank" rel="noopener noreferrer" class="discord-link block">
+									<h4 class="font-bold">Mycophiles</h4>
+									<p class="text-sm text-gray-400">For those who love fungi • Cultivation & foraging</p>
 								</a>
 							</div>
 						</div>
@@ -248,9 +250,25 @@ import CallToAction from '../components/CallToAction.astro';
 		animation: glow 2s ease-in-out infinite;
 	}
 	
+	.mushroom-card.bioluminescent .glow-image {
+		animation: glow-pulse 3s ease-in-out infinite;
+		filter: brightness(1.1) saturate(1.2);
+	}
+	
 	@keyframes glow {
 		0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 148, 0.5)); }
 		50% { filter: drop-shadow(0 0 20px rgba(0, 255, 148, 0.8)); }
+	}
+	
+	@keyframes glow-pulse {
+		0%, 100% { 
+			filter: drop-shadow(0 0 15px rgba(0, 255, 148, 0.6)) brightness(1.1) saturate(1.2);
+			transform: scale(1);
+		}
+		50% { 
+			filter: drop-shadow(0 0 30px rgba(0, 255, 148, 0.9)) brightness(1.3) saturate(1.4);
+			transform: scale(1.02);
+		}
 	}
 	
 	.image-container {

@@ -10,17 +10,17 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
   const featuredPlaylists = [
     {
       id: 'PL892hVFbsO0jJnt_UOXz-Ks1vJjOflgmy',
-      title: 'Manny\'s Metal Mix',
-      description: 'My go-to tracks for maximum heaviness'
+      title: 'Louder Than Life 2025 Festival Mix',
+      description: 'Getting ready for the ultimate metal festival'
     },
     {
       id: 'PL892hVFbsO0ir262LRUQsrzpgZZhJtQxR',
-      title: 'Progressive Journeys',
-      description: 'Mind-bending compositions and technical mastery'
+      title: 'Louder Than Life 2024',
+      description: 'Memories from last year\'s epic festival'
     },
     {
       id: 'LRSRj3l4xiivqmp0jqRz5U16i1IUt-fHRnB75',
-      title: 'Recent Discoveries',
+      title: 'Spring Recap',
       description: 'Fresh finds and new obsessions'
     }
   ];
@@ -142,7 +142,7 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
             <p className="text-sm text-gray-400 mb-3">Check out my full collection</p>
             <div className="flex gap-4">
               <a
-                href="https://music.youtube.com/@1armmanny"
+                href="https://music.youtube.com/channel/UCforXGa-pZ259RRZsVCOHTg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
@@ -151,7 +151,7 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
                 <span className="text-sm">→</span>
               </a>
               <a
-                href="https://www.youtube.com/@1armmanny/playlists"
+                href="https://music.youtube.com/channel/UCforXGa-pZ259RRZsVCOHTg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
@@ -175,7 +175,7 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
             className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors text-center"
           >
             <span className="text-2xl block mb-1">🤘</span>
-            <span className="text-sm">Metal Mix</span>
+            <span className="text-sm">LTL 2025</span>
           </a>
           <a
             href="https://music.youtube.com/playlist?list=PL892hVFbsO0ir262LRUQsrzpgZZhJtQxR"
@@ -184,7 +184,7 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
             className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors text-center"
           >
             <span className="text-2xl block mb-1">🎸</span>
-            <span className="text-sm">Progressive</span>
+            <span className="text-sm">LTL 2024</span>
           </a>
           <a
             href="https://music.youtube.com/playlist?list=LRSRj3l4xiivqmp0jqRz5U16i1IUt-fHRnB75"
@@ -193,10 +193,10 @@ const YouTubeMusicPlayer = ({ apiKey }) => {
             className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors text-center"
           >
             <span className="text-2xl block mb-1">💀</span>
-            <span className="text-sm">Recent Finds</span>
+            <span className="text-sm">Spring Recap</span>
           </a>
           <a
-            href="https://music.youtube.com/@1armmanny"
+            href="https://music.youtube.com/channel/UCforXGa-pZ259RRZsVCOHTg"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors text-center"
