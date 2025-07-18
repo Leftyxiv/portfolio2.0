@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
+import AppleMusicPlayer from '../components/AppleMusicPlayer.jsx';
+import YouTubeMusicPlayer from '../components/YouTubeMusicPlayer.jsx';
+---
+
+<BaseLayout title="Metal Music - Manny Ledoux" description="Into the abyss of heavy metal">
+	<div class="min-h-screen relative metal-page">
+		{/* Metal background */}
+		<div class="fixed inset-0 overflow-hidden metal-bg">
+			<div class="absolute inset-0 bg-gradient-to-br from-red-900/20 via-black to-orange-900/20"></div>
+			<div class="fire-particles"></div>
+		</div>
+		
+		<div class="wrapper relative z-10">
+			<Hero
+				title="Into the Abyss of Metal"
+				tagline="From crushing riffs to blast beats, this is my sonic sanctuary"
+				align="center"
+			/>
+			
+			<main class="mt-16 mb-24 space-y-24">
+				{/* Currently Vibing */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Currently Vibing</h2>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						{/* Apple Music Integration */}
+						<div>
+							<AppleMusicPlayer client:load />
+						</div>
+						
+						{/* YouTube Music Integration */}
+						<div>
+							<YouTubeMusicPlayer client:load apiKey={import.meta.env.YOUTUBE_API_KEY} />
+						</div>
+					</div>
+					
+					{/* Recently Discovered - Keep this static section */}
+					<div class="mt-8 recently-discovered max-w-2xl mx-auto">
+						<h3 class="text-2xl font-bold text-red-400 mb-4">Recently Discovered</h3>
+						<ul class="space-y-3">
+							<li class="discovered-band">
+								<h4 class="font-bold text-white">Archspire</h4>
+								<p class="text-sm text-gray-400">Technical Death Metal • Canada</p>
+								<p class="text-xs text-gray-500">Insane speed and precision</p>
+							</li>
+							<li class="discovered-band">
+								<h4 class="font-bold text-white">Igorrr</h4>
+								<p class="text-sm text-gray-400">Experimental/Breakcore Metal • France</p>
+								<p class="text-xs text-gray-500">Absolutely unhinged in the best way</p>
+							</li>
+							<li class="discovered-band">
+								<h4 class="font-bold text-white">Zeal & Ardor</h4>
+								<p class="text-sm text-gray-400">Avant-garde Black Metal • Switzerland</p>
+								<p class="text-xs text-gray-500">Black metal meets spirituals</p>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				{/* Subgenre Explorer */}
+				<section class="subgenre-section">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Subgenre Explorer</h2>
+					<div class="subgenre-grid">
+						<div class="subgenre-card death-metal">
+							<h3 class="text-2xl font-bold mb-3">Death Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Brutal, technical, and uncompromising</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Death</li>
+								<li>• Morbid Angel</li>
+								<li>• Cannibal Corpse</li>
+								<li>• Gojira</li>
+							</ul>
+						</div>
+						
+						<div class="subgenre-card black-metal">
+							<h3 class="text-2xl font-bold mb-3">Black Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Atmospheric, raw, and otherworldly</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Darkthrone</li>
+								<li>• Emperor</li>
+								<li>• Burzum</li>
+								<li>• Mayhem</li>
+							</ul>
+						</div>
+						
+						<div class="subgenre-card prog-metal">
+							<h3 class="text-2xl font-bold mb-3">Progressive Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Complex, dynamic, and innovative</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Tool</li>
+								<li>• Opeth</li>
+								<li>• Mastodon</li>
+								<li>• Between the Buried and Me</li>
+							</ul>
+						</div>
+						
+						<div class="subgenre-card doom-metal">
+							<h3 class="text-2xl font-bold mb-3">Doom Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Slow, heavy, and crushing</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Black Sabbath</li>
+								<li>• Electric Wizard</li>
+								<li>• Sleep</li>
+								<li>• YOB</li>
+							</ul>
+						</div>
+						
+						<div class="subgenre-card thrash-metal">
+							<h3 class="text-2xl font-bold mb-3">Thrash Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Fast, aggressive, and energetic</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Metallica</li>
+								<li>• Slayer</li>
+								<li>• Megadeth</li>
+								<li>• Anthrax</li>
+							</ul>
+						</div>
+						
+						<div class="subgenre-card power-metal">
+							<h3 class="text-2xl font-bold mb-3">Power Metal</h3>
+							<p class="text-sm text-gray-300 mb-4">Epic, melodic, and uplifting</p>
+							<h4 class="font-bold text-sm mb-2">Essential Bands:</h4>
+							<ul class="text-sm text-gray-400 space-y-1">
+								<li>• Blind Guardian</li>
+								<li>• Helloween</li>
+								<li>• DragonForce</li>
+								<li>• Sabaton</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				{/* Concert Chronicles */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Concert Chronicles</h2>
+					<div class="concert-grid">
+						<div class="concert-card">
+							<h3 class="text-xl font-bold text-red-400">Gojira @ The Fillmore</h3>
+							<p class="text-gray-400 text-sm mb-2">March 2023 • San Francisco, CA</p>
+							<p class="text-gray-300">Absolutely crushing performance. The whale projections during "Flying Whales" gave me chills.</p>
+						</div>
+						
+						<div class="concert-card">
+							<h3 class="text-xl font-bold text-red-400">Tool @ Chase Center</h3>
+							<p class="text-gray-400 text-sm mb-2">January 2022 • San Francisco, CA</p>
+							<p class="text-gray-300">Mind-bending visuals and flawless execution. Danny Carey is not human.</p>
+						</div>
+						
+						<div class="concert-card">
+							<h3 class="text-xl font-bold text-red-400">Meshuggah @ The Warfield</h3>
+							<p class="text-gray-400 text-sm mb-2">September 2022 • San Francisco, CA</p>
+							<p class="text-gray-300">The most precise wall of sound I've ever experienced. Polyrhythmic perfection.</p>
+						</div>
+						
+						<div class="concert-card wishlist">
+							<h3 class="text-xl font-bold text-orange-400">Wishlist Shows</h3>
+							<ul class="text-gray-400 space-y-1 mt-2">
+								<li>• Opeth (acoustic set)</li>
+								<li>• Ne Obliviscaris</li>
+								<li>• Archspire</li>
+								<li>• Rivers of Nihil</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				{/* Band Spotlight */}
+				<section class="band-spotlight">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Band Spotlight</h2>
+					<div class="spotlight-container">
+						<div class="spotlight-header">
+							<h3 class="text-4xl font-bold text-red-400">MESHUGGAH</h3>
+							<p class="text-xl text-gray-400">Swedish Extreme Metal</p>
+						</div>
+						<div class="spotlight-content">
+							<p class="text-gray-300 mb-4">
+								The masters of polyrhythmic metal. Meshuggah has been bending minds and breaking necks since 1987. 
+								Their influence on modern metal cannot be overstated - they essentially created djent and continue 
+								to push the boundaries of what's possible in extreme music.
+							</p>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+								<div>
+									<h4 class="font-bold text-red-400 mb-2">Essential Albums:</h4>
+									<ul class="text-gray-400 space-y-1">
+										<li>• Destroy Erase Improve (1995)</li>
+										<li>• Nothing (2002)</li>
+										<li>• obZen (2008)</li>
+										<li>• The Violent Sleep of Reason (2016)</li>
+									</ul>
+								</div>
+								<div>
+									<h4 class="font-bold text-red-400 mb-2">Why They Matter:</h4>
+									<ul class="text-gray-400 space-y-1">
+										<li>• Pioneered 8-string guitars in metal</li>
+										<li>• Masters of polyrhythmic composition</li>
+										<li>• Influenced an entire generation</li>
+										<li>• Still innovating after 35+ years</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				{/* The Vault */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">The Vault</h2>
+					<div class="vault-grid">
+						<div class="vault-section">
+							<h3 class="text-2xl font-bold text-red-400 mb-4">Favorite Album Art</h3>
+							<div class="album-art-grid">
+								<div class="album-art-item">
+									<div class="art-placeholder">🎨</div>
+									<p class="text-sm">Blood Mountain - Mastodon</p>
+								</div>
+								<div class="album-art-item">
+									<div class="art-placeholder">🎨</div>
+									<p class="text-sm">Lateralus - Tool</p>
+								</div>
+								<div class="album-art-item">
+									<div class="art-placeholder">🎨</div>
+									<p class="text-sm">Blackwater Park - Opeth</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="vault-section">
+							<h3 class="text-2xl font-bold text-red-400 mb-4">Underground Gems</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• <span class="font-bold">Slugdge</span> - Mollusk-themed tech death</li>
+								<li>• <span class="font-bold">Alkaloid</span> - Progressive extreme metal</li>
+								<li>• <span class="font-bold">Artificial Brain</span> - Sci-fi death metal</li>
+								<li>• <span class="font-bold">Spectral Voice</span> - Cavernous death/doom</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+	
+	<ContactCTA />
+</BaseLayout>
+
+<style>
+	.metal-page {
+		color: #e5e7eb;
+	}
+	
+	.metal-bg {
+		background-image: 
+			radial-gradient(ellipse at top, rgba(220, 38, 38, 0.2) 0%, transparent 50%),
+			radial-gradient(ellipse at bottom, rgba(251, 146, 60, 0.1) 0%, transparent 50%);
+	}
+	
+	.fire-particles {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: 
+			radial-gradient(circle at 20% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+		animation: flicker 3s ease-in-out infinite;
+	}
+	
+	@keyframes flicker {
+		0%, 100% { opacity: 0.5; }
+		50% { opacity: 0.8; }
+	}
+	
+	.now-playing-card {
+		@apply bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-red-900/50;
+	}
+	
+	.current-track {
+		@apply flex gap-4 items-center;
+	}
+	
+	.album-art {
+		@apply w-24 h-24 bg-gray-800 rounded-lg flex items-center justify-center;
+	}
+	
+	.music-service-link {
+		@apply flex items-center gap-2 px-4 py-2 rounded-lg transition-colors text-sm;
+	}
+	
+	.apple-music {
+		@apply bg-gray-800 hover:bg-gray-700 text-white;
+	}
+	
+	.youtube-music {
+		@apply bg-red-900/30 hover:bg-red-900/50 text-red-400;
+	}
+	
+	.recently-discovered {
+		@apply bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-red-900/50;
+	}
+	
+	.discovered-band {
+		@apply p-3 bg-gray-800/50 rounded-lg;
+	}
+	
+	.subgenre-grid {
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+	}
+	
+	.subgenre-card {
+		@apply bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300;
+		@apply hover:transform hover:-translate-y-1 hover:shadow-lg;
+	}
+	
+	.subgenre-card.death-metal { @apply hover:shadow-red-900/50; }
+	.subgenre-card.black-metal { @apply hover:shadow-gray-700; }
+	.subgenre-card.prog-metal { @apply hover:shadow-purple-900/50; }
+	.subgenre-card.doom-metal { @apply hover:shadow-green-900/50; }
+	.subgenre-card.thrash-metal { @apply hover:shadow-yellow-900/50; }
+	.subgenre-card.power-metal { @apply hover:shadow-blue-900/50; }
+	
+	.concert-grid {
+		@apply grid grid-cols-1 md:grid-cols-2 gap-6;
+	}
+	
+	.concert-card {
+		@apply bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-gray-700;
+	}
+	
+	.concert-card.wishlist {
+		@apply border-orange-900/50;
+	}
+	
+	.spotlight-container {
+		@apply bg-gradient-to-br from-red-900/20 to-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-red-900/50;
+		@apply max-w-4xl mx-auto;
+	}
+	
+	.spotlight-header {
+		@apply text-center mb-6 pb-6 border-b border-red-900/30;
+	}
+	
+	.vault-grid {
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+	}
+	
+	.vault-section {
+		@apply bg-gray-900/70 backdrop-blur-sm rounded-xl p-6 border border-gray-700;
+	}
+	
+	.album-art-grid {
+		@apply grid grid-cols-3 gap-4;
+	}
+	
+	.album-art-item {
+		@apply text-center;
+	}
+	
+	.art-placeholder {
+		@apply w-full aspect-square bg-gray-800 rounded-lg flex items-center justify-center text-4xl mb-2;
+	}
+</style>

@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SporeParticles from '../components/SporeParticles.jsx';
+import ContactCTA from '../components/ContactCTA.astro';
+import Icon from '../components/Icon.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<BaseLayout title="Mycology - Manny Ledoux" description="Exploring the fascinating world of fungi">
+	<SporeParticles client:load count={30} />
+	
+	<div class="min-h-screen relative">
+		{/* Fungal background */}
+		<div class="fixed inset-0 overflow-hidden mycology-bg">
+			<div class="absolute inset-0 bg-gradient-to-br from-mushroom-biolume/10 via-transparent to-green-900/10"></div>
+			<div class="absolute top-0 left-0 w-full h-full opacity-5">
+				<div class="mycelium-pattern"></div>
+			</div>
+		</div>
+		
+		<div class="wrapper relative z-10">
+			<Hero
+				title="Exploring the Fungal Kingdom"
+				tagline="A journey through mycology, cultivation, and the magic of mushrooms"
+				align="center"
+			/>
+			
+			<main class="mt-16 mb-24 space-y-24">
+				{/* Mushroom Gallery */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Mushroom Gallery</h2>
+					<div class="mushroom-gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{/* Sample mushroom cards - in production, these would be generated from data */}
+						<div class="mushroom-card group">
+							<div class="image-container">
+								<span class="text-8xl">🍄</span>
+							</div>
+							<h3 class="text-xl font-bold text-mushroom-biolume">Amanita muscaria</h3>
+							<p class="text-sm text-gray-400 italic mb-2">Fly Agaric</p>
+							<p class="text-gray-300 text-sm">The iconic red and white mushroom. Psychoactive but toxic - handle with extreme care!</p>
+							<p class="text-xs text-gray-500 mt-2">Found: Pacific Northwest • October 2023</p>
+						</div>
+						
+						<div class="mushroom-card group">
+							<div class="image-container">
+								<span class="text-8xl">🍄</span>
+							</div>
+							<h3 class="text-xl font-bold text-mushroom-biolume">Pleurotus ostreatus</h3>
+							<p class="text-sm text-gray-400 italic mb-2">Oyster Mushroom</p>
+							<p class="text-gray-300 text-sm">Delicious edible with a delicate flavor. Easy to cultivate at home!</p>
+							<p class="text-xs text-gray-500 mt-2">Cultivated: Home Lab • Ongoing</p>
+						</div>
+						
+						<div class="mushroom-card group bioluminescent">
+							<div class="image-container">
+								<span class="text-8xl filter brightness-150">🍄</span>
+							</div>
+							<h3 class="text-xl font-bold text-mushroom-biolume">Panellus stipticus</h3>
+							<p class="text-sm text-gray-400 italic mb-2">Bitter Oyster</p>
+							<p class="text-gray-300 text-sm">One of the few bioluminescent mushrooms in North America!</p>
+							<p class="text-xs text-gray-500 mt-2">Found: Local Forest • September 2023</p>
+						</div>
+					</div>
+				</section>
+				
+				{/* Cultivation Corner */}
+				<section class="cultivation-section">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Cultivation Corner</h2>
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						<div class="cultivation-card">
+							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4">Current Projects</h3>
+							<ul class="space-y-3">
+								<li class="flex items-start gap-3">
+									<span class="text-2xl">🦪</span>
+									<div>
+										<h4 class="font-bold text-white">Blue Oyster Mushrooms</h4>
+										<p class="text-gray-400 text-sm">Growing in straw substrate - Week 3 of fruiting</p>
+									</div>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-2xl">🦁</span>
+									<div>
+										<h4 class="font-bold text-white">Lion's Mane</h4>
+										<p class="text-gray-400 text-sm">Supplemented sawdust blocks - Pinning stage</p>
+									</div>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-2xl">🌰</span>
+									<div>
+										<h4 class="font-bold text-white">Shiitake</h4>
+										<p class="text-gray-400 text-sm">Oak logs inoculated - Colonization phase</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="cultivation-card">
+							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4">Tips & Lessons</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li class="flex items-start gap-2">
+									<span class="text-green-400">✓</span>
+									<p>Maintain 80-95% humidity for most species during fruiting</p>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-green-400">✓</span>
+									<p>Fresh air exchange is crucial - CO2 buildup stunts growth</p>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-green-400">✓</span>
+									<p>Sterilization is key - one contamination can ruin a whole batch</p>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-green-400">✓</span>
+									<p>Start with oyster mushrooms - they're the most forgiving!</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				{/* Community & Resources */}
+				<section>
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Community & Resources</h2>
+					
+					<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+						{/* Discord Communities */}
+						<div class="resource-card">
+							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4 flex items-center gap-2">
+								<Icon icon="discord-logo" size="1.5em" />
+								Discord Communities
+							</h3>
+							<div class="space-y-3">
+								<a href="#" class="discord-link block">
+									<h4 class="font-bold">Mushroom Growers United</h4>
+									<p class="text-sm text-gray-400">5k+ members • Active cultivation community</p>
+								</a>
+								<a href="#" class="discord-link block">
+									<h4 class="font-bold">Mycology Enthusiasts</h4>
+									<p class="text-sm text-gray-400">General mycology discussion & ID help</p>
+								</a>
+								<a href="#" class="discord-link block">
+									<h4 class="font-bold">Gourmet Mushroom Cultivation</h4>
+									<p class="text-sm text-gray-400">Focus on edible species & recipes</p>
+								</a>
+							</div>
+						</div>
+						
+						{/* Books & Guides */}
+						<div class="resource-card">
+							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4 flex items-center gap-2">
+								<span class="text-2xl">📚</span>
+								Books & Field Guides
+							</h3>
+							<ul class="space-y-2 text-gray-300">
+								<li>• <em>Mycelium Running</em> - Paul Stamets</li>
+								<li>• <em>The Mushroom Cultivator</em> - Stamets & Chilton</li>
+								<li>• <em>Mushrooms of the Pacific Northwest</em></li>
+								<li>• <em>Radical Mycology</em> - Peter McCoy</li>
+								<li>• <em>Entangled Life</em> - Merlin Sheldrake</li>
+							</ul>
+						</div>
+						
+						{/* Apps & Websites */}
+						<div class="resource-card">
+							<h3 class="text-2xl font-bold text-mushroom-biolume mb-4 flex items-center gap-2">
+								<span class="text-2xl">📱</span>
+								Apps & Websites
+							</h3>
+							<ul class="space-y-2">
+								<li><a href="https://www.inaturalist.org/" class="link">iNaturalist</a> - Community ID</li>
+								<li><a href="https://mushroomobserver.org/" class="link">Mushroom Observer</a></li>
+								<li><a href="#" class="link">Seek by iNaturalist</a> - Quick ID</li>
+								<li><a href="https://www.shroomery.org/" class="link">The Shroomery</a></li>
+								<li><a href="https://www.mushroomexpert.com/" class="link">MushroomExpert.com</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				
+				{/* Fun Facts */}
+				<section class="fun-facts">
+					<h2 class="text-3xl font-bold text-white mb-8 text-center">Fascinating Fungi Facts</h2>
+					<div class="fact-grid">
+						<div class="fact-card">
+							<span class="fact-icon">🌍</span>
+							<p>The largest living organism on Earth is a honey fungus in Oregon, covering 2,385 acres!</p>
+						</div>
+						<div class="fact-card">
+							<span class="fact-icon">💡</span>
+							<p>There are over 70 species of bioluminescent mushrooms that glow in the dark!</p>
+						</div>
+						<div class="fact-card">
+							<span class="fact-icon">🌳</span>
+							<p>Trees communicate through underground fungal networks called the "Wood Wide Web"</p>
+						</div>
+						<div class="fact-card">
+							<span class="fact-icon">💊</span>
+							<p>Penicillin, one of the most important antibiotics, comes from the Penicillium fungus</p>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+	
+	<ContactCTA />
+</BaseLayout>
+
+<style>
+	.mycology-bg {
+		background-image: 
+			radial-gradient(ellipse at top, rgba(0, 255, 148, 0.1) 0%, transparent 50%),
+			radial-gradient(ellipse at bottom, rgba(107, 70, 193, 0.05) 0%, transparent 50%);
+	}
+	
+	.mycelium-pattern {
+		background-image: repeating-linear-gradient(
+			60deg,
+			transparent,
+			transparent 20px,
+			rgba(0, 255, 148, 0.03) 20px,
+			rgba(0, 255, 148, 0.03) 40px
+		), repeating-linear-gradient(
+			-60deg,
+			transparent,
+			transparent 20px,
+			rgba(0, 255, 148, 0.03) 20px,
+			rgba(0, 255, 148, 0.03) 40px
+		);
+		width: 100%;
+		height: 100%;
+	}
+	
+	.mushroom-card {
+		@apply bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-mushroom-biolume/50 transition-all duration-300;
+	}
+	
+	.mushroom-card:hover {
+		@apply transform -translate-y-1 shadow-lg shadow-mushroom-biolume/20;
+	}
+	
+	.mushroom-card.bioluminescent {
+		@apply hover:shadow-mushroom-biolume/40;
+	}
+	
+	.mushroom-card.bioluminescent .image-container {
+		animation: glow 2s ease-in-out infinite;
+	}
+	
+	@keyframes glow {
+		0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 148, 0.5)); }
+		50% { filter: drop-shadow(0 0 20px rgba(0, 255, 148, 0.8)); }
+	}
+	
+	.image-container {
+		@apply h-48 bg-gray-800/50 rounded-lg mb-4 flex items-center justify-center;
+	}
+	
+	.cultivation-card {
+		@apply bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700;
+	}
+	
+	.resource-card {
+		@apply bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700;
+	}
+	
+	.discord-link {
+		@apply p-3 bg-gray-800/50 rounded-lg hover:bg-gray-800 transition-colors;
+	}
+	
+	.link {
+		@apply text-mushroom-biolume hover:text-green-400 transition-colors;
+	}
+	
+	.fact-grid {
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+	}
+	
+	.fact-card {
+		@apply bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 text-center;
+	}
+	
+	.fact-icon {
+		@apply text-4xl mb-4 block;
+	}
+</style>
